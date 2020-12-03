@@ -103,7 +103,7 @@ const ready = $(document).ready(function () {
 					vertical: true,
 					verticalSwiping: true,
 					slidesToScroll: 1,
-					infinite: true,
+					infinite: false,
 					centerMode: true
 				},
 			},
