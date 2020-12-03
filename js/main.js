@@ -91,7 +91,6 @@ const ready = $(document).ready(function () {
 		slidesToScroll: 1,
 		centerMode: true,
 		centerPadding: '160px',
-		asNavFor: '.our-doctors__list-big-wrap',
 		focusOnSelect: true,
 		vertical: false,
 		infinite: false,
@@ -103,15 +102,19 @@ const ready = $(document).ready(function () {
 					vertical: true,
 					verticalSwiping: true,
 					slidesToScroll: 1,
-					infinite: false,
+					infinite: true,
 					centerMode: true
 				},
 			},
 		],
 	});
 	$('.our-doctors__list-big-wrap').slick({
-		arrows: true,
-		asNavFor: '.our-doctors__list-mini-wrap',
+		arrows: true
+	});
+
+	$( '.our-doctors__item-slide-wrap' ).click( function() {
+		let dataSlide = $( this ).data( 'slide-to' );
+		$('.our-doctors__list-big-wrap').slick('slickGoTo', dataSlide);
 	});
 
   $('.gift__img-wrap').beforeAfter();
